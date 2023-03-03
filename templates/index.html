@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PyAPI</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <!-- Start Nav -->
+    <nav>
+        <a href="#"><span class="heading">PyAPI</span></a>
+    </nav>
+    <!-- End Nav -->
+
+    <!-- Start Container -->
+    <div class="container">
+        <div class="col">
+            <div class="row">
+                <div class="content">
+                    <select id="methods">
+                        <option value="GET">GET</option>
+                        <option value="POST">POST</option>
+                        <option value="PUT">PUT</option>
+                        <option value="PATCH">PATCH</option>
+                        <option value="DELETE">DELETE</option>
+                        <option value="HEAD">HEAD</option>
+                        <option value="OPTIONS">OPTIONS</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row flex-1">
+                <div class="form-wrapper">
+                    <form action="" method="post" id="reqForm">
+                    {% csrf_token %}
+                        <input type="hidden" name="method" value="GET" id="hid">
+                        <div class="flex">
+                            <input type="url" placeholder="Enter Enpoint..." required name="endpoint" id="endpoint">
+                            <button id="btn">GET</button>
+                        </div>
+                        <input type="text" name="headers" id="headers" placeholder="Headers{key:value}">
+                        <textarea style="display: none;" autocapitalize="off" name="data" id="data">{}</textarea>
+                    </form>
+                </div>
+                
+                {% if response %}
+                    <div class="response">
+                        <legend class="header">Response</legend>
+                        <h3>{{ status_code }}</h3>
+                        {{ response }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <!-- End Container -->
+    <script src="{% static 'main.js' %}"></script>
+</body>
+</html>

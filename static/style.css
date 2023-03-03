@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #27282c;
+    color: #fff;
+    font-size: 62.5%;
+    font-weight: 300;
+    font-family: Helvetica;
+}
+nav {
+    box-shadow: hsl(0,0%,80%) 0 0 5px;
+    padding: 4% 12%;
+    font-size: 1.2rem;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+.container {
+    margin: 2em 10%;
+    box-shadow: hsl(0,0%,80%) 0 0 5px;
+    padding: 1em;
+}
+.container .col {
+    display: flex;
+    gap: 10px;
+}
+.container .col > hr {
+    background: #fff;
+    width: 1px;
+    border: none;
+}
+.header {
+    font-size: 1.1rem;
+    margin-bottom: 1em;
+}
+.content select {
+    width: 100%;
+    padding: 12px;
+}
+.flex {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+form input {
+    width: 100%;
+    padding: 10px 12px;
+}
+#btn {
+    background: blue;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 10px;
+    width: 30%;
+}
+.flex-1 {
+    flex: 1;
+}
+.response {
+    margin-top: 2em;
+    overflow: auto;
+    font-size: 1.5em;
+}
+#data {
+    width: 100%;
+    padding: 10px;
+    display: inline-block;
+    margin-top: 1em;
+    height: 120px;
+}
+.hide {
+    display: none;
+}
+#headers {
+    display: inline-block;
+    margin-top: 1em;
+}
+@media only screen and (max-width: 700px) {
+    .container {
+        margin: 2em 1.5em;
+    }
+    .container .col {
+        display: block;
+    }
+    .form-wrapper {
+        margin-top: 1.5em;
+    }
+}
